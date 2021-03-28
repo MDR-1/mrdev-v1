@@ -1,0 +1,1807 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+/* Allgemeines */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 0 0;
+}
+.overflow-wrapper{
+  overflow-x: hidden;
+  position: relative;
+}
+.container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.fixed{
+  overflow: hidden;
+}
+/* Screen Reader Text */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+/* Nav Bar */
+#navbar {
+  position: fixed;
+  top: 0.5em;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  line-height: 60px;
+  height: 60px;
+  transition: all 250ms ease-in-out;
+}
+#brand {
+  float: left;
+  z-index: 999;
+  position: relative;
+}
+#brand img {
+  height: 60px;
+  width: auto;
+}
+/* Burger Menü */
+#burger-button {
+  float: right;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+#burger-button .burger-icon {
+  width: 32px;
+  height: 3px;
+  background-color: #505050;
+  display: block;
+  margin: 20px 0 28px 20px;
+  position: relative;
+  transition: background-color 300ms linear;
+  z-index: 999;
+}
+#burger-button .burger-icon:before {
+  content: "";
+  width: 32px;
+  height: 3px;
+  background-color: #505050;
+  display: block;
+  position: absolute;
+  transition: transform 300ms linear;
+}
+#burger-button .burger-icon:after {
+  content: "";
+  width: 32px;
+  height: 3px;
+  background-color: #505050;
+  display: block;
+  position: absolute;
+  transition: transform 300ms linear;
+}
+#burger-button .burger-icon:before {
+  /* top: -8px; */
+  transform: translateY(-8px);
+}
+#burger-button .burger-icon:after {
+  /* bottom: -8px; */
+  transform: translateY(8px);
+}
+/* Checkbox */
+#nav-trigger {
+  display: none;
+}
+/* Geschwister-Element */
+#nav-trigger:checked ~ #burger-button .burger-icon {
+  background-color: transparent;
+}
+#nav-trigger:checked ~ #burger-button .burger-icon:before {
+  transform: rotate(-45deg);
+}
+#nav-trigger:checked ~ #burger-button .burger-icon:after {
+  transform: rotate(45deg);
+}
+#nav-trigger:checked > #main-nav .nav-menu{
+  display: block;
+}
+/* Main Nav */
+#main-nav {
+  float: right;
+}
+.nav-menu {
+  list-style-type: none;
+  margin-top: 0;
+}
+.nav-menu li {
+  float: left;
+}
+.nav-menu li a {
+  text-decoration: none;
+  padding: 0 1.3em;
+  color: #505050;
+  display: block;
+  transition: all 250ms ease-in-out;
+  position: relative;
+}
+.nav-menu li a:hover {
+  color: #8d8d8d;
+}
+/* Nav Menü Underline Animation */
+.nav-menu li a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #505050;
+  visibility: hidden;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: 250ms linear;
+}
+.nav-menu li a:hover:before,
+.nav-menu li a:focus:before {
+  visibility: visible;
+  transform: scaleX(1);
+  background-color: #8d8d8d;
+}
+/* Header */
+header {
+  background-image: url(img/MR_Cover.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-attachment: fixed;
+  min-height: 100vh;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+#page-header {
+  padding-top: 3em;
+  position: relative;
+}
+#page-text {
+  position: absolute;
+  left: 18%;
+  top: 32%;
+}
+#page-header h1 {
+  font-size: 5.8em;
+  color: #505050;
+  font-weight: bold;
+  margin: 0 0;
+  margin-bottom: -0.2em;
+}
+#page-header h2 {
+  font-size: 5.8em;
+  color: #8d8d8d;
+  font-weight: bold;
+  margin: 0 0;
+  padding-left: 0.3em;
+  width: 100%;
+}
+.btn-contact {
+  border: 3px solid #505050;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #505050;
+  padding: 0.8em;
+  text-transform: uppercase;
+  font-weight: 300;
+  position: relative;
+  top: 1em;
+  left: 18rem;
+  transition: all 150ms ease-in-out;
+}
+.btn-contact:hover {
+  color: #8d8d8d;
+  border: 3px solid #8d8d8d;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+/* Main */
+/* About Section */
+#about {
+  position: relative;
+}
+#abt-background {
+  background-color: #d86161;
+  min-height: 70vh;
+  padding-top: 4.5em;
+  clip-path: polygon(0% 0%, 55% 0%, 0% 300%, 0% 50%);
+}
+.graphic img {
+  height: 21.75em;
+  width: auto;
+}
+.section-text-abt {
+  position: absolute;
+  top: 27%;
+  right: 0;
+}
+.section-text-abt h3 {
+  padding-left: 2em;
+  position: relative;
+}
+.section-text-abt h3::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 3px;
+  background-color: #000000;
+  left: 0;
+  top: 14px;
+}
+.section-text h3 {
+  padding-left: 2em;
+  position: relative;
+  margin-top: 0;
+}
+.section-title {
+  font-size: 1.25em;
+}
+h2 {
+  font-size: 1.5em;
+  color: #393939;
+  width: 50%;
+  line-height: 1.4em;
+}
+#about p {
+  width: 50%;
+  line-height: 1.5em;
+}
+/* Skills Section */
+#skills {
+  background-color: #f3f3f3;
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+}
+#skills .section-text-skill {
+  padding: 2em 0 0 10em;
+}
+#skills .section-text-skill h2 {
+  width: 50%;
+}
+#skills .section-text-skill h3 {
+  padding-left: 4em;
+  font-size: 1.25em;
+  position: relative;
+}
+.section-text-skill h3::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 3px;
+  background-color: #000000;
+  left: 3rem;
+  top: 14px;
+}
+.col-4 h3 {
+  margin-bottom: 0;
+  width: 100%;
+  margin-top: 0.3em;
+  text-align: center;
+}
+.col-4 span {
+  display: grid;
+  place-items: center;
+}
+#skills p {
+  width: 100%;
+  line-height: 1.5em;
+  margin-top: 0.3em;
+  text-align: center;
+}
+/* Teaser Boxen */
+.teaser-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.col-4 {
+  width: calc(100% / 4);
+  flex: 1 1 150px;
+  padding: 0 15px;
+}
+/* Icons */
+.icon {
+  height: 130px;
+  width: auto;
+}
+.responsive {
+  padding-right: 15%;
+}
+.analytics {
+  padding-right: 12%;
+}
+.seo {
+  padding-right: 12%;
+}
+/* Karriere */
+#career {
+  min-height: 70vh;
+  height: 80vh;
+  display: grid;
+  place-items: center;
+}
+.section-text-career {
+  padding: 2em 5.5em 0 0;
+}
+#career .section-title {
+  text-align: center;
+}
+#career h2 {
+  width: 100%;
+  margin-left: 2em;
+}
+.section-text-career h3 {
+  padding-left: 2em;
+  position: relative;
+}
+.section-text-career h3::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 3px;
+  background-color: #000000;
+  left: 5em;
+  top: 14px;
+}
+/* Karriere Dreieck und Grafik */
+#career-graphics{
+  position: relative;
+}
+#career-triangle {
+  background-color: #d86161a3;
+  height: 240px;
+  width: 240px;
+  transform: rotate(45deg);
+  position: absolute;
+  right: -6.2em;
+  margin-top: 0;
+}
+#atom img {
+  height: 1000px;
+  width: 1000px;
+  position: absolute;
+  right: -17.5em;
+  transform: rotate(3deg);
+  top: 98em;
+}
+/* Portfolio */
+#portfolio {
+  min-height: 190vh;
+}
+.section-text-portfolio {
+  padding: 2em 5.5em 0 0;
+  margin-bottom: 3em;
+}
+#portfolio .section-title {
+  text-align: center;
+}
+#portfolio h2 {
+  width: 100%;
+  margin-left: 0.4em;
+  text-align: center;
+}
+.section-text-portfolio h3 {
+  padding-left: 2.5em;
+  position: relative;
+}
+.section-text-portfolio h3::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 3px;
+  background-color: #000000;
+  margin-left: -3.5rem;
+  top: 14px;
+}
+/* Portfolio Raster */
+#portfolio-flex {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+.portfolio-wrapper{
+  display: block;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 250ms ease-in-out;
+  display: grid;
+  align-items: center;
+}
+.portfolio-wrapper:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.portfolio-wrapper:hover > .portfolio-text{
+  visibility: visible;
+  opacity: 1;
+}
+.portfolio-text{
+  visibility: hidden;
+  opacity: 0;
+  transition: all 250ms ease-in-out;
+}
+.portfolio-text h3{
+  color: #ffffff;
+  font-size: 2.5em;
+  margin: 0 0 .3em 0;
+}
+.portfolio-text p{
+  color: #ffffff;
+  font-size: 1.2em;
+  margin: .2em 0;
+}
+.portfolio-text a{
+  text-decoration: none;
+  color: #d86161;
+}
+#div1 {
+  height: 540px;
+  width: 960px;
+  flex-shrink: 0;
+  margin: 0 1em 0 0;
+  flex: 1 1 540px;
+  position: relative;
+  overflow: hidden;
+}
+#div1 img{
+  height: 700px;
+  width: auto;
+}
+#div2 {
+  height: 540px;
+  width: 960px;
+  margin: 0 1em;
+  flex: 1 1 715px;
+  position: relative;
+  overflow: hidden;
+}
+#div2 img{
+  height: 600px;
+  width: auto;
+}
+#div3 {
+  height: 540px;
+  width: 535px;
+  margin: 0em 0em 0 1em;
+  flex: 1 1 540px;
+  position: relative;
+  overflow: hidden;
+}
+#div3 img{
+  height: 550px;
+  width: auto;
+}
+#div4 {
+  height: 500px;
+  width: 810px;
+  margin: 2em 1em 0 0;
+  flex: 1 1 500px;
+  position: relative;
+  overflow: hidden;
+}
+#div4 img{
+  height: 800px;
+  width: auto;
+}
+#div5 {
+  height: 500px;
+  width: 540px;
+  margin: 2em 0 0 1em;
+  flex: 1 1 500px;
+  position: relative;
+  overflow: hidden;
+}
+#div5 img{
+  height: 650px;
+  width: auto;
+}
+#div6 {
+  height: 440px;
+  width: 100%;
+  margin: 2em 0;
+  flex: 1 1 1000px;
+  position: relative;
+  overflow: hidden;
+}
+#div6 img{
+  height: 1300px;
+  width: auto;
+}
+/* Kontakt */
+#contact {
+  min-height: 75vh;
+  position: relative;
+  margin-top: 7em;
+}
+#contact .section-title {
+  text-align: center;
+}
+.section-text-contact {
+  position: absolute;
+  right: 33em;
+  top: 1em;
+}
+.section-text-contact h3 {
+  padding-left: 0;
+  position: relative;
+}
+.section-text-contact h3::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 3px;
+  background-color: #000000;
+  margin-left: -3.5rem;
+  top: 14px;
+}
+#contact h2 {
+  width: 100%;
+  margin-left: 0.7em;
+  text-align: center;
+}
+/* Kontakt IMG */
+#contact .graphic img {
+  width: 1100px;
+  height: auto;
+}
+/* Kontaktformular */
+form {
+  position: absolute;
+  right: 11em;
+  top: 10em;
+}
+form input {
+  border: none;
+  border-bottom: 1px solid #393939;
+  padding: 20px 0;
+  margin: 5px 120px 0 0;
+  outline: none;
+  background-color: transparent;
+}
+::placeholder {
+  color: #bebebe;
+  opacity: 1;
+}
+form input:focus {
+  border-bottom: 1px solid #d86161;
+}
+form input:invalid {
+  outline: none;
+}
+form input:empty {
+  outline: none;
+}
+form textarea {
+  border: none;
+  border-bottom: 1px solid #393939;
+  padding: 20px 0;
+  margin: 30px 0 0 10px;
+  width: 27.5em;
+  outline: none;
+  background-color: transparent;
+}
+form textarea:focus {
+  border-bottom: 1px solid #d86161;
+}
+form button {
+  border: 3px solid #d86161;
+  border-radius: 10px;
+  background-color: transparent;
+  text-decoration: none;
+  color: #d86161;
+  padding: 0.8em 3.2em;
+  margin-top: 1em;
+  text-transform: uppercase;
+  font-weight: 300;
+  position: relative;
+  top: 1em;
+  left: 0.5rem;
+  transition: all 150ms ease-in-out;
+}
+form button:hover {
+  border: 3px solid #d86161;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+/* Footer */
+footer {
+  background-color: #d86161;
+  min-height: 10vh;
+  height: auto;
+}
+#page-footer ul {
+  list-style-type: none;
+  margin: 0 0;
+  padding-top: 15px;
+}
+#page-footer ul li {
+  float: left;
+  height: 70px;
+  padding: 0 10px;
+}
+.copyright {
+  float: right;
+  color: #393939;
+  padding-top: 25px;
+}
+.social-links span img {
+  height: 70px;
+  width: auto;
+  color: #393939;
+  transition: all 150ms ease-in-out;
+}
+.social-links span img:hover {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+/* To Top Button */
+#to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 100px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: none;
+}
+#to-top a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #d86161;
+  border-radius: 5px;
+  display: block;
+  transition: all 150ms ease-in-out;
+}
+#to-top a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+/* Media Queries */
+/* Larger Screen Style */
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+  /* About Section */
+  body{
+    overflow-x: hidden;
+  }
+  .graphic img{
+    height: 23.5em;
+    position: relative;
+    right: 5em;
+    top: -2em;
+  }
+  .section-text-abt {
+    right: -11em;
+    top: 31%;
+  }
+  /* Skills Section */
+  #skills .section-text-skill{
+    padding: 2em 0 0 13em;
+  }
+  /* Career Section */
+  #career{
+    height: 85vh;
+  }
+  .section-text-career{
+    padding: 2em 3.5em 0 0;
+  }
+  #atom img{
+    height: 850px;
+    width: 850px;
+    top: 83em;
+  }
+  /* Portfolio Section */
+  .section-text-portfolio{
+    padding: 2em 3.5em 0 0;
+  } 
+  #div1{
+    width: 500px;
+    flex: 1 1 500px;
+  }
+  #div1 img{
+    height: 940px;
+    width: auto;
+  }
+  #div2{
+    width: 500px;
+    flex: 1 1 500px;
+    margin: 0 0;
+  }
+  #div3{
+    height: 500px;
+    width: 500px;
+    margin: 2em 1em 0 0;
+    flex: 1 1 500px;
+  }
+  #div3 img{
+    height: 750px;
+    width: auto;
+  }
+  #div4{
+    width: 500px;
+    margin: 2em 0 0 0;
+    flex: 1 1 500px;
+  }
+  #div5 img{
+    height: 1010px;
+  }
+  /* Contact Section */
+  #contact{
+    height: 85vh;
+  }
+  .section-text-contact{
+    right: 32em;
+    top: -5em;
+  }
+  form{
+    right: 4em;
+    top: 6em;
+  }
+  #contact h2{
+    margin-left: 0;
+    text-align: initial;
+  }
+  #contact .graphic img{
+    width: 950px;
+    top: 3em;
+  }
+  /* Footer */
+  #page-footer ul{
+    padding-top: 0;
+  }
+}
+/* Large Screen Style */
+@media screen and (min-width: 1200px) and (max-width: 1250px) {
+  #page-header h1{
+    font-size: 5.8em;
+  }
+  #page-header h2 {
+    font-size: 5.8em;
+  }
+  #page-text{
+    top: 33%;
+    left: 14%;
+  }
+  .btn-contact{
+    left: 19rem;
+    color: #505050;
+    border: solid 3px #505050;
+  }
+  .btn-contact:hover{
+    color: #505050;
+    border: solid 3px #505050;
+  }
+  /* About Section */
+  #about p{
+    width: 45%;
+    font-size: 1.1em;
+  }
+  .section-text-abt{
+    right: -16em;
+    top: 29%;
+  }
+  /* Skills Section */
+  .col-4 h3{
+    width: 100%;
+  }
+  #skills p{
+    width: 100%;
+  }
+  #skills .section-text-skill {
+    padding: 2em 0 0 12em;
+}
+  /* Career Section */
+  #career{
+    height: 85vh;
+  }
+  .section-text-career {
+    padding: 2em 4.5em 0 0;
+}
+  #atom img {
+    height: 750px;
+    width: 850px;
+    position: absolute;
+    right: -17.5em;
+    transform: rotate(3deg);
+    top: 85em;
+  }
+  /* Portfolio Section */
+  .section-text-portfolio {
+    padding: 2em 3.5em 0 0;
+}
+  #div1 {
+    flex: 1 1 500px;
+  }
+  #div1 img{
+    height: 800px;
+    width: auto;
+  }
+  #div2 {
+    flex: 1 1 500px;
+    margin: 0 0;
+  }
+  #div3{
+    height: 500px;
+    width: 500px;
+    margin: 2em 1em 0 0;
+    flex: 1 1 500px;
+  }
+  #div3 img{
+    height: 650px;
+    width: auto;
+  }
+  #div4{
+    margin: 2em 0 0 0;
+  }
+  #div4 img{
+    height: 500px;
+    width: auto;
+  }
+  #div5{
+    margin: 2em 0 0 0;
+  }
+  #div6{
+    height: 500px;
+    width: 500px;
+    flex: 1 1 500px;
+    margin: 2em 0 0 1em;
+  }
+  #div6 img{
+    height: 500px;
+    width: auto;
+  }
+  /* Contact Section */
+  #contact{
+    min-height: 90vh;
+  }
+  #contact h2{
+    margin-left: 0;
+  }
+  .section-text-contact {
+    position: absolute;
+    right: 24em;
+    top: -3em;
+  }
+  #contact .graphic img{
+    width: 910px;
+    height: auto;
+    right: 9em;
+    top: 7em;
+  }
+  form{
+    right: -4em;
+  }
+  /* Footer */
+  #page-footer ul{
+    padding-top: 0;
+  }
+}
+/* Small Screen Style */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .nav-menu li a{
+    padding: 0 1.2em;
+  }
+  #page-text {
+    left: 11%;
+    top: 27%;
+  }
+  #page-header h1{
+    font-size: 5.5em;
+  }
+  #page-header h2 {
+    line-height: 1em;
+    margin: 0.5em .3em;
+    padding-left: 0em;
+    font-size: 5.5em;
+  }
+  .btn-contact {
+    left: 18.5rem;
+    color: #505050;
+    border: 3px solid #505050;
+  }
+  .btn-contact:hover {
+    color: #505050;
+    border: 3px solid #505050;
+  }
+/* About Section */
+  .section-text-abt {
+    right: -16.5em;
+    top: 23%;
+  }
+  .graphic img {
+    height: 21em;
+    width: auto;
+    position: relative;
+    right: 5em;
+    top: -3em;
+  }
+  #abt-background {
+    clip-path: polygon(0% 0%, 65% 0%, 0% 240%, 0% 50%);
+  }
+  #about h2 {
+    width: 50%;
+  }
+  #about p {
+    width: 45%;
+  }
+  .section-text-abt h3::before {
+    top: 13px;
+    width: 35px;
+}
+/* Skills Section */
+  #skills .section-text-skill {
+    padding: 2em 0 0 10.5em;
+  }
+  #skills .section-text-skill h3 {
+    padding-left: 4.5em;
+}
+#skills h3{
+  width: 100%;
+}
+#skills p{
+  width: 100%;
+}
+  .section-text-skill h3::before {
+    top: 14px;
+    width: 35px;
+    left: 3.8rem;
+  }
+  #skills .section-text-skill h2 {
+    width: 60%;
+  }
+  #seo > h3{
+    width: 100%;
+  }
+  .col-4{
+    flex: 1 1 250px;
+  }
+/* Career Section */
+#career{
+  height: 80vh;
+}
+.section-text-career{
+  margin-left: 2.4em;
+}
+.section-text-career h3 {
+  padding-left: 4em;
+  }
+  .section-text-career h3::before {
+    left: 6em;
+    top: 13px;
+  }
+  #career h2 {
+    margin-left: 1.4em;
+    width: 90%;
+    text-align: center;
+    }
+  #atom img {
+    height: 500px;
+    right: -10.5em;
+    top: 36%;
+    width: 650px;
+  }
+  #career-triangle{
+    height: 140px;
+    width: 140px;
+    margin-bottom: 5em;
+    right: -3.5em;
+  }
+/* Portfolio Section */
+.section-text-portfolio {
+  padding: 2em 2em 0 0;
+}
+.section-text-portfolio h3::before {
+  margin-left: -3rem;
+  top: 13px;
+}
+#div1 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div1 img{
+  height: 1470px;
+  width: auto;
+}
+#div2 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div2 img{
+  height: 800px;
+  width: auto;
+}
+#div3 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div3 img {
+  height: 600px;
+  width: auto;
+}
+#div4 {
+  height: 400px;
+  margin: 0 0 1em 1em;
+}
+#div5 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div5 img {
+  height: 780px;
+  width: auto;
+}
+#div6 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+/* Contact Section */
+#contact{
+  height: 70vh;
+}
+#contact .graphic img {
+  width: 850px;
+  right: 7em;
+  top: 2em;
+}
+.section-text-contact {
+  position: absolute;
+  top: -6em;
+  left: 0;
+  right: 0;
+}
+.section-text-contact h3{
+  margin-left: 2em;
+}
+.section-text-contact h3::before {
+  top: 10px;
+}
+#contact h2{
+  text-align: center;
+  margin-left: 0;
+}
+form {
+  right: 3em;
+  top: 4.5em;
+  padding: 0px;
+}
+form input {
+  margin: 5px 5px 0 0;
+  width: 45%;
+}
+form textarea{
+  margin: 30px 0 0;
+  width: 21em;
+}
+#page-footer ul{
+  padding-left: 0;
+}
+#page-footer ul li {
+  height: 50px;
+}
+.social-links span img {
+  height: 50px;
+}
+.copyright {
+  padding-top: 18px;
+  font-size: .8em;
+}
+}
+/* Tablet Style */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .nav-menu li a{
+    padding: 0 .7em;
+  }
+  #page-text {
+    left: 8%;
+    top: 28%;
+  }
+  #page-header h1{
+    font-size: 4.5em;
+  }
+  #page-header h2 {
+    line-height: 1em;
+    margin: 0.5em .3em;
+    padding-left: 0em;
+    font-size: 4.5em;
+  }
+  .btn-contact {
+    left: 13rem;
+    color: #505050;
+    border: 3px solid #505050;
+  }
+  .btn-contact:hover {
+    color: #505050;
+    border: 3px solid #505050;
+  }
+/* About Section */
+  .section-text-abt {
+    right: -23.5em;
+    top: 7%;
+  }
+  .graphic img {
+    height: 21em;
+    width: auto;
+    position: relative;
+    right: 8em;
+    top: -3em;
+  }
+  #abt-background {
+    clip-path: polygon(0% 0%, 65% 0%, 0% 240%, 0% 50%);
+  }
+  #about h2 {
+    width: 30%;
+  }
+  #about p {
+    width: 21%;
+  }
+  .section-text-abt h3::before {
+    top: 13px;
+    width: 35px;
+}
+/* Skills Section */
+  #skills .section-text-skill {
+    padding: 2em 0 0 10.5em;
+  }
+  #skills .section-text-skill h3 {
+    padding-left: 4.5em;
+}
+#skills h3{
+  width: 100%;
+}
+#skills p{
+  width: 100%;
+}
+  .section-text-skill h3::before {
+    top: 14px;
+    width: 35px;
+    left: 3.8rem;
+  }
+  #skills .section-text-skill h2 {
+    width: 60%;
+  }
+  #seo > h3{
+    width: 100%;
+  }
+  .col-4{
+    flex: 1 1 190px;
+  }
+/* Career Section */
+#career{
+  height: 100vh;
+}
+.section-text-career{
+  margin-left: 2.4em;
+}
+.section-text-career h3 {
+  padding-left: 4em;
+  }
+  .section-text-career h3::before {
+    left: 6em;
+    top: 13px;
+  }
+  #career h2 {
+    margin-left: 1.4em;
+    width: 90%;
+    text-align: center;
+    }
+  #atom img {
+    height: 300px;
+    right: -7.5em;
+    top: 34.9%;
+    width: 300px;
+  }
+  #career-triangle{
+    height: 80px;
+    width: 80px;
+    margin-bottom: 11em;
+    right: -3.1em;
+  }
+/* Portfolio Section */
+.section-text-portfolio {
+  padding: 2em 2em 0 0;
+}
+.section-text-portfolio h3::before {
+  margin-left: -3rem;
+  top: 13px;
+}
+#div1 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div1 img {
+  height: 1200px;
+  width: auto;
+}
+#div2 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div2 img {
+  height: 650px;
+  width: auto;
+}
+#div3 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div3 img {
+  height: 950px;
+  width: auto;
+}
+#div4 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div5 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div6 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+/* Contact Section */
+#contact{
+  height: 115vh;
+}
+#contact .graphic img {
+  width: 850px;
+  right: 1em;
+  top: 1em;
+}
+.section-text-contact {
+  position: absolute;
+  top: -6em;
+  left: 0;
+  right: 0;
+}
+.section-text-contact h3{
+  margin-left: 2em;
+}
+.section-text-contact h3::before {
+  top: 10px;
+}
+#contact h2{
+  text-align: center;
+  margin-left: 0;
+}
+form {
+  right: 7em;
+  top: 23em;
+  padding: 0px;
+}
+form input {
+  margin: 5px 5px 0 0;
+  width: 45%;
+}
+form textarea{
+  margin: 30px 0 0;
+  width: 20em;
+}
+#page-footer ul{
+  padding-left: 0;
+}
+#page-footer ul li {
+  height: 50px;
+}
+.social-links span img {
+  height: 50px;
+}
+.copyright {
+  padding-top: 18px;
+  font-size: .8em;
+}
+}
+/* Large Phone Style */
+@media screen and (min-width: 600px) and (max-width: 767px) { 
+  body {
+    font-size: 16px;
+  }
+  #brand img {
+    height: 50px;
+    width: auto;
+  }
+  /* Main Nav + Burger Button + Checkbox Function Styling */
+  #main-nav {
+    visibility: hidden;
+    opacity: 0;
+    height: 110vh;
+    background-color: #d86161;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    transition: all 250ms ease-in-out;
+  }
+  .nav-menu{
+    font-size: 3.5em;
+    padding: 1.8em 0 0;
+  }
+  .nav-menu li{
+    float: none;
+    padding: .8em 0 0;
+    text-align: center;
+  }
+  .nav-menu li a{
+    padding: 0 0;
+  }
+  #burger-button {
+    display: block;
+  }
+  input[type="checkbox"]:checked ~ #main-nav { 
+    visibility: visible;
+    opacity: 1; 
+    }
+    .nav-menu li a:clicked ~ #main-nav {
+      visibility: hidden;
+      opacity: 0;
+    }
+  #page-text {
+    left: 3.5%;
+    top: 28%;
+  }
+  #page-header h1{
+    font-size: 5em;
+  }
+  #page-header h2 {
+    line-height: 1em;
+    margin: 0.5em 0;
+    padding-left: .4em;
+    font-size: 5em;
+  }
+  .btn-contact {
+    left: 11rem;
+    color: #505050;
+    border: 3px solid #505050;
+    font-size: 1.3em;
+  }
+  .btn-contact:hover {
+    color: #505050;
+    border: 3px solid #505050;
+  }
+/* About Section */
+  .section-text-abt {
+    right: -22.5em;
+    top: 21%;
+  }
+  .graphic img {
+    height: 21em;
+    width: auto;
+    position: relative;
+    right: 7.5em;
+    top: -1em;
+  }
+  #abt-background {
+    clip-path: polygon(0% 0%, 65% 0%, 0% 240%, 0% 50%);
+  }
+  #about h2 {
+    width: 40%;
+  }
+  #about p {
+    width: 37%;
+  }
+  .section-text-abt h3::before {
+    top: 10px;
+    width: 30px;
+}
+/* Skills Section */
+  #skills .section-text-skill {
+    padding: 2em 0 0 10.5em;
+  }
+  #skills .section-text-skill h3 {
+    padding-left: 4.5em;
+}
+#skills h3{
+  width: 100%;
+}
+#skills p{
+  width: 100%;
+}
+  .section-text-skill h3::before {
+    top: 10px;
+    left: 2.6rem;
+  }
+  #skills .section-text-skill h2 {
+    width: 60%;
+  }
+  #seo > h3{
+    width: 100%;
+  }
+/* Career Section */
+#career{
+  height: 110vh;
+}
+.section-text-career{
+  margin-left: 2.4em;
+}
+.section-text-career h3 {
+  padding-left: 4em;
+  }
+  .section-text-career h3::before {
+    left: 6em;
+    top: 10px;
+  }
+  #career h2 {
+    margin-left: 2em;
+    width: 90%;
+    text-align: center;
+    }
+  #atom img {
+    height: 300px;
+    right: -7.5em;
+    top: 33%;
+    width: 300px;
+  }
+  #career-triangle{
+    height: 80px;
+    width: 80px;
+    margin-bottom: 16em;
+    right: -3.1em;
+  }
+/* Portfolio Section */
+.section-text-portfolio {
+  padding: 2em 2em 0 0;
+}
+.section-text-portfolio h3 {
+  padding-left: 3em;
+}
+.section-text-portfolio h3::before {
+  margin-left: -3rem;
+  top: 10px;
+}
+#div1 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div1 img {
+  height: 800px;
+  width: auto;
+}
+#div2 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div3 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div3 img {
+  height: 650px;
+  width: auto;
+}
+#div4 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div5 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div6 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+/* Contact Section */
+#contact{
+  height: 120vh;
+}
+#contact .graphic img {
+  width: 850px;
+  right: 6em;
+  top: 1em;
+}
+.section-text-contact {
+  position: absolute;
+  top: -6em;
+  left: 0;
+  right: 0;
+}
+.section-text-contact h3{
+  margin-left: 2em;
+}
+.section-text-contact h3::before {
+  top: 10px;
+}
+#contact h2{
+  text-align: center;
+  margin-left: 0;
+}
+form {
+  right: 8em;
+  top: 30em;
+  padding: 15px;
+}
+form input {
+  margin: 5px 5px 0 0;
+  width: 44%;
+}
+form textarea{
+  margin: 30px 0 0;
+  width: 20em;
+}
+form button{
+  left: 3.3rem;
+  font-size: 1.1em;
+}
+#page-footer ul{
+  padding-left: 0;
+}
+#page-footer ul li {
+  height: 50px;
+}
+.social-links span img {
+  height: 50px;
+}
+.copyright {
+  padding-top: 18px;
+  font-size: .8em;
+}
+}
+/* Small Phone Style */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+  #brand img {
+    height: 50px;
+    width: auto;
+  }
+  /* Main Nav + Burger Button + Checkbox Function Styling */
+  #main-nav {
+    visibility: hidden;
+    opacity: 0;
+    height: 110vh;
+    background-color: #d86161;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    transition: all 250ms ease-in-out;
+  }
+  .nav-menu{
+    font-size: 3.5em;
+    padding: 1.8em 0 0;
+  }
+  .nav-menu li{
+    float: none;
+    padding: .8em 0 0;
+    text-align: center;
+  }
+  .nav-menu li a{
+    padding: 0 0;
+  }
+  #burger-button {
+    display: block;
+  }
+  input[type="checkbox"]:checked ~ #main-nav { 
+    visibility: visible;
+    opacity: 1; 
+    }
+    .nav-menu li a:clicked ~ #main-nav {
+      visibility: hidden;
+      opacity: 0;
+    }
+  #page-text {
+    left: 6%;
+    top: 20%;
+  }
+  #page-header h1{
+    font-size: 4.5em;
+  }
+  #page-header h2 {
+    line-height: 1em;
+    margin: 0.5em 0;
+    padding-left: 0em;
+    font-size: 4.5em;
+  }
+  .btn-contact {
+    left: 3.5rem;
+    color: #505050;
+    border: 3px solid #505050;
+    font-size: 1.1em;
+  }
+  .btn-contact:hover {
+    color: #505050;
+    border: 3px solid #505050;
+  }
+/* About Section */
+  .section-text-abt {
+    right: -28.5em;
+    top: 18%;
+  }
+  .graphic img {
+    height: 13em;
+    width: auto;
+    position: relative;
+    right: 5.5em;
+    top: 5em;
+  }
+  #abt-background {
+    clip-path: polygon(0% 0%, 65% 0%, 0% 240%, 0% 50%);
+  }
+  #about h2 {
+    width: 30%;
+  }
+  #about p {
+    width: 21%;
+  }
+  .section-text-abt h3::before {
+    top: 10px;
+    width: 30px;
+}
+/* Skills Section */
+  #skills .section-text-skill {
+    padding: 2em 0 0 3.5em;
+  }
+  #skills .section-text-skill h3 {
+    padding-left: 4.5em;
+}
+#skills h3{
+  width: 100%;
+}
+#skills p{
+  width: 100%;
+}
+  .section-text-skill h3::before {
+    top: 10px;
+    left: 2.7rem;
+  }
+  #skills .section-text-skill h2 {
+    width: 90%;
+  }
+  #seo > h3{
+    width: 100%;
+  }
+/* Career Section */
+#career{
+  height: 80vh;
+}
+.section-text-career{
+  margin-left: 2.4em;
+}
+.section-text-career h3 {
+  padding-left: 4em;
+  }
+  .section-text-career h3::before {
+    left: 2em;
+    top: 10px;
+  }
+  #career h2 {
+    margin-left: 1.4em;
+    width: 90%;
+    text-align: center;
+    }
+  #atom img {
+    height: 300px;
+    right: -7.5em;
+    top: 38.5%;
+    width: 300px;
+  }
+  #career-triangle{
+    height: 80px;
+    width: 80px;
+    margin-bottom: 11em;
+    right: -3.1em;
+  }
+/* Portfolio Section */
+.section-text-portfolio {
+  padding: 2em 2em 0 0;
+}
+.section-text-portfolio h3::before {
+  margin-left: -3rem;
+  top: 10px;
+}
+#div1 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div2 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div3 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div4 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div5 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+#div6 {
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+/* Contact Section */
+#contact{
+  height: 100vh;
+}
+#contact .graphic img {
+  width: 530px;
+  right: 5em;
+  top: 1em;
+}
+.section-text-contact {
+  position: absolute;
+  top: -6em;
+  left: 0;
+  right: 0;
+}
+.section-text-contact h3{
+  margin-left: 2em;
+}
+.section-text-contact h3::before {
+  top: 10px;
+}
+#contact h2{
+  text-align: center;
+  margin-left: 0;
+}
+form {
+  right: -1em;
+  top: 20em;
+  padding: 15px;
+}
+form input {
+  margin: 5px 5px 0 0;
+  width: 45%;
+}
+form textarea{
+  margin: 30px 0 0;
+  width: 20em;
+}
+form button{
+  font-size: 1.1em;
+}
+#page-footer ul{
+  padding-left: 0;
+}
+#page-footer ul li {
+  height: 50px;
+}
+.social-links span img {
+  height: 50px;
+}
+.copyright {
+  padding-top: 18px;
+  font-size: .8em;
+}

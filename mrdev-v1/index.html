@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="description" content="Marcel Rattinger Web Development">
+    <title>MR Web Development</title>
+    <link rel="shortcut icon" href="img/MR_Dev_Logo_Anthr.svg">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+    <!-- Timeline CSS -->
+    <link rel="stylesheet" href="css/timeline.css" type="text/css">
+    <!-- Einbindung eigene CSS -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<!-- Body Anfang -->
+<body class="home">
+<div class="overflow-wrapper">
+    <div id="navbar" class="container">
+        <div id="brand">
+            <a href="#page-header" title="Zurück zur Startseite">
+                <img src="img/MR_Dev_Logo_Anthr.svg" alt="MR Development Logo">
+            </a>
+        </div>
+<!-- Checkbox für das Öffnen / Schließen des Burger-Menüs -->
+        <input type="checkbox" id="nav-trigger">
+        <label for="nav-trigger" id="burger-button">
+            <!-- Icomoon Burger-Menü Icon -->
+            <span class="burger-icon" aria-hidden="true"></span>
+            <!-- Screen Reader Text -->
+            <span class="screen-reader-text">Navigation öffnen/schließen</span>
+        </label>
+<!-- Main Nav -->
+        <nav id="main-nav">
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#career">Karriere</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+<!-- Header -->
+<header id="page-header">
+    <span id="page-text">
+        <h1 id="page-title">Marcel Rattinger</h1>
+        <h2>Web Developer</h2>
+        <a href="#contact" class="btn-contact">Kontakt aufnehmen</a>
+    </span>    
+</header>
+<!-- Main Content -->
+<main id="content">
+    <!-- About Sektion -->
+    <section id="about">
+            <div id="abt-background">
+                <span class="graphic"><img src="img/MR_Rocket.svg"></span>
+            </div>
+        <div class="section-text-abt">
+            <h3 class="section-title">About</h3>
+            <h2>Ich Entwickle und baue einzigartige Websites</h2>
+            <p>Lassen Sie uns zusammen abheben und neue Erfahrungen im Web Bereich sammeln.</p>
+        </div>
+    </section>
+    <!-- Skills Sektion -->
+    <section id="skills" class="container">
+        <div class="section-text-skill">
+            <h3 class="section-title">Skills</h3>
+            <h2>Meine Fähigkeiten und Kompetenzen</h2>
+        </div>
+    <!-- Teaser Boxen -->
+        <div class="container">
+            <div class="columns teaser-row">
+                <div class="col-4">
+                    <!-- Icon Coding -->
+                    <span><img src="img/development.svg" alt="Icon Programmierung">
+                        <h3>HTML / CSS</h3>
+                        <p>Durch fundierte Kenntnisse in dem Bereich setze ich Ihre Wünsche um und helfe Ihnen zur Traum Website.</p>
+                    </span>
+                </div>
+            
+                <div class="col-4">
+                    <!-- Icon Responsive -->
+                    <span><img src="img/responsive.svg" alt="Icon Responsive Website"></span>
+                    <h3>Responsive Websites</h3>
+                    <p>Ich programmiere Websites die auf allen Endgeräten funktionieren, sei es der PC oder das Mobiltelefon.</p>
+                </div>
+                
+                <div class="col-4">
+                    <!-- Icon Analytical -->
+                    <span><img src="img/analytics.svg" alt="Icon Analytisch"></span>
+                    <h3>Analytisch</h3>
+                    <p>Durch gute Debugging &amp; Testing Fähigkeiten finde ich schnell heraus wo der Code Verbesserungen braucht.</p>
+                </div>
+                
+                <div class="col-4">
+                    <!-- Icon SEO -->
+                    <span><img src="img/seo.svg" id="seo" alt="Icon SEO"></span>
+                    <h3>Suchmaschinen Optimierung</h3>
+                    <p>Ob per HTML5 Semantik oder Metadaten. Ich sorge für eine gute SEO Ihrer Website.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Karriere Sektion -->
+    <section id="career" class="container cd-horizontal-timeline">
+        <div class="section-text-career">
+            <h3 class="section-title">Karriere</h3>
+            <h2>Geschichte und Timeline</h2>
+        </div>
+        <!-- Dreieck + Grafik Einbindung -->
+        <div id="career-triangle"></div>
+        <span id="atom"><img src="img/MR_Atom.svg" alt="Grafik eines Atoms"></span>
+        <!-- Timeline -->
+        <div class="timeline">
+            <!-- Events Wrapper -->
+            <div class="events-wrapper">
+             <!-- Events -->
+                <div class="events">
+                    <ol>
+                        <li><a href="#0" data-date="01/06/2017" class="selected">06/2017</a></li>
+                        <li><a href="#0" data-date="01/10/2017">10/2017</a></li>
+                        <li><a href="#0" data-date="01/07/2018">07/2018</a></li>
+                        <li><a href="#0" data-date="01/10/2019">10/2019</a></li>
+                        <li><a href="#0" data-date="01/02/2020">02/2020</a></li>
+                    </ol>
+                    <span class="filling-line" aria-hidden="true"></span>
+                </div> 
+            </div> 
+            <ul class="cd-timeline-navigation">
+                <li><a href="#0" class="prev inactive">Prev</a></li>
+                <li><a href="#0" class="next">Next</a></li>
+            </ul> 
+        </div>
+    <!-- Events / Berufserfahrung -->
+        <div class="events-content">
+            <ol>
+                <li class="selected" data-date="01/06/2017">
+                    <h4>Elektrotechniker bei ATB Spielberg</h4>
+                    <em>Ab 06/2017</em>
+                    <p>	
+                        Reparatur und Wartung bestehender Elektroanlagen im Betrieb. 
+                    </p>
+                </li>
+    
+                <li data-date="01/10/2017">
+                    <h4>Zivildiener beim ÖRK Bezirksstelle Knittelfeld</h4>
+                    <em>Ab 10/2017</em>
+                    <p>	
+                        Ausbildung zum Rettungssanitäter - Krankentransporte, Sanitäts 
+                        sowie Rettungseinsätze. 
+                    </p>
+                </li>
+    
+                <li data-date="01/07/2018">
+                    <h4>Elektrotechniker (Fachkraft in der Produktion)</h4>
+                    <em>Ab 07/2018</em>
+                    <p>	
+                        Zusammenbau, Mechanische sowie Elektrische Prüfung von Elektromotoren.
+                        Wartungstätigkeiten und Reparaturen von Elektromotoren. 
+                    </p>
+                </li>
+    
+                <li data-date="01/10/2019">
+                    <h4>Start der Fachakademie Medieninformatik & Mediendesign</h4>
+                    <em>Ab 10/2019</em>
+                    <p>	
+                        Weiterbildung am WIFI in den Bereichen Grafik, Printdesign, Web-Design &amp; Entwicklung, Foto &amp; Multimedia.
+                    </p>
+                </li>
+    
+                <li data-date="01/02/2020">
+                    <h4>Elektrotechniker bei AVL DItest</h4>
+                    <em>Ab 02/2020</em>
+                    <p>	
+                        Produktion und Kalibrierung von Klimaservicegeräten. 
+                        Im 2. Jahr Teamleiter der Klimaservice Abteilung.
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <!-- Portfolio Sektion -->
+    <section id="portfolio">
+        <div class="section-text-portfolio">
+            <h3 class="section-title">Portfolio</h3>
+            <h2>Meine Projekte</h2>
+        </div>
+        <!-- Projektraster Einbindung -->
+        <div id="portfolio-flex" class="container">
+            <div id="div1">
+                <img src="img/portfolio1.jpg" alt="Projekt 1">
+                <div class="portfolio-wrapper">
+                    <span class="portfolio-text">
+                        <h3 class="portfolio-title">Neues Projekt</h3>
+                        <p>Neues Projekt kommt bald...</p>
+                        <a href="index.html">Erfahren Sie mehr...</a>
+                    </span>
+                </div>
+            </div>
+            <div id="div2">
+                <img src="img/portfolio2.jpg" alt="Projekt 2">
+                <div class="portfolio-wrapper">
+                    <span class="portfolio-text">
+                        <h3 class="portfolio-title">Neues Projekt</h3>
+                        <p>Neues Projekt kommt bald...</p>
+                        <a href="index.html">Erfahren Sie mehr...</a>
+                    </span>
+                </div>
+            </div>
+            <div id="div3">
+                <img src="img/portfolio3.jpg" alt="Projekt 3">
+                <div class="portfolio-wrapper">
+                    <span class="portfolio-text">
+                        <h3 class="portfolio-title">Neues Projekt</h3>
+                        <p>Neues Projekt kommt bald...</p>
+                        <a href="index.html">Erfahren Sie mehr...</a>
+                    </span>
+                </div>
+            </div>
+            <div id="div4">
+                <img src="img/portfolio4.jpg" alt="Projekt 4">
+                <div class="portfolio-wrapper">
+                    <span class="portfolio-text">
+                        <h3 class="portfolio-title">Neues Projekt</h3>
+                        <p>Neues Projekt kommt bald...</p>
+                        <a href="index.html">Erfahren Sie mehr...</a>
+                    </span>
+                </div>
+            </div>
+            <div id="div5">
+                <img src="img/portfolio5.jpg" alt="Projekt 5">
+                <div class="portfolio-wrapper">
+                    <span class="portfolio-text">
+                        <h3 class="portfolio-title">Neues Projekt</h3>
+                        <p>Neues Projekt kommt bald...</p>
+                        <a href="index.html">Erfahren Sie mehr...</a>
+                    </span>
+                </div>
+            </div>
+            <div id="div6">
+                <img src="img/portfolio6.jpg" alt="Projekt 6">
+                <div class="portfolio-wrapper">
+                    <span class="portfolio-text">
+                        <h3 class="portfolio-title">Neues Projekt</h3>
+                        <p>Neues Projekt kommt bald...</p>
+                        <a href="index.html">Erfahren Sie mehr...</a>
+                    </span>
+                </div>
+            </div>
+    </section>
+    <!-- Kontakt Sektion -->
+    <section id="contact">
+        <div class="section-text-contact">
+            <h3 class="section-title">Kontakt</h3>
+            <h2>Schreiben Sie mir</h2>
+        </div>
+        <span class="graphic"><img src="img/MR_Contact.svg" alt="Kontakt Illustration"></span>
+        <!-- Formular Einbindung -->
+        <div class="form-wrapper">
+            <form action="#" method="post">
+                <!-- Vorname Input -->
+                <label for="name" class="screen-reader-text"></label>
+                <input type="text" id="name" name="name" placeholder="Name *" required>
+                <!-- Nachname Input -->
+                <label for="last-name" class="screen-reader-text"></label>
+                <input type="text" id="last-name" name="last-name" placeholder="Nachname*" required>
+                <br>
+                <!-- Email Input -->
+                <label for="email" class="screen-reader-text"></label>
+                <input type="text" id="email" name="email" placeholder="E-mail*" required>
+                <!-- Tel Nr Input -->
+                <label for="number" class="screen-reader-text"></label>
+                <input type="text" id="number" name="number" placeholder="Tel. Nr.">
+                <br>
+                <!-- Textfeld -->
+                <label for="message" class="screen-reader-text"></label>
+                <textarea id="message" name="message" placeholder="Ihre Nachricht*" required></textarea>
+                    <div class="forms-actions">
+                    <button type="submit">Absenden</button>
+                    </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer id="page-footer" class="container">
+    <!-- Socials -->
+    <ul class="social-links">
+        <li>
+            <a href="mailto:marcel.rattinger@protonmail.com" target="_blank" rel="nofollow">
+                <!-- Icon E-mail -->
+                <span><img src="img/maildark.svg" alt="E-mail Icon"></span>
+                <span class="screen-reader-text">Schreiben Sie mir eine E-mail</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/marcel-rattinger-b3a20819a/" target="_blank" rel="nofollow">
+                <!-- Icon Linkedin -->
+                <span><img src="img/linkedindark.svg" alt="Linkedin Icon"></span>
+                <span class="screen-reader-text">Folgen Sie mir auf Linkedin</span>
+            </a>
+        </li>
+    </ul>
+    <!-- MR Dev Copyright -->
+    <span class="copyright">&copy;MR Development</span>
+</footer>
+
+<!-- To Top Button -->
+<div id="to-top">
+    <a href="#page-header">TOP</a>
+</div>
+
+    <!-- Einbindung jQuery -->
+    <script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <!-- Eigenes Script -->
+    <script src="js/scripts.js" type="text/javascript"></script>
+</body>
+</div>
+</html>
